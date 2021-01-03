@@ -25,6 +25,12 @@
 
     <dependencies>
 
+        <!-- JMS -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-artemis</artifactId>
+        </dependency>
+
 
         <!--        additional dependencies removed since inherited from BOM -->
         <dependency>
