@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.kwgdev.beer.inventory.service.BeerInventoryApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.093 s - in com.kwgdev.beer.inventory.service.BeerInventoryApplicationTests
