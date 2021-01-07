@@ -1,4 +1,4 @@
-package com.kwgdev.common.events;
+package com.kwgdev.brewery.model.events;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
