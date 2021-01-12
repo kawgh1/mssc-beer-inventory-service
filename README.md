@@ -28,11 +28,13 @@ Beer object example:
 [![CircleCI](https://circleci.com/gh/kawgh1/mssc-beer-inventory-service.svg?style=svg)](https://circleci.com/gh/kawgh1/mssc-beer-inventory-service)
 # MSSC Beer Inventory Service - Microservice
 
-Steps for Deconstruction into  Microservices
-1. Dependency Management
-2. (Local) MySQL Configuration
-3. JMS Messaging
-4. JMS with Microservices
-5. Spring State Machine
-6. Using Sagas with Spring
-7. Integration Testing Sagas
+## Steps for Deconstruction into  Microservices
+#### 1. Dependency Management
+#### 2. (Local) MySQL Configuration
+#### 3. JMS Messaging
+#### 4. JMS with Microservices
+#### 5. Spring State Machine
+#### 6. Using Sagas with Spring
+#### 7. Integration Testing Sagas
+#### 8. Compensating Transactions
+#### 9. Spring Cloud Gateway
