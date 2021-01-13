@@ -103,4 +103,30 @@ public class AllocationServiceImpl implements AllocationService {
             log.debug("Saved Inventory for beer upc: " + savedInventory.getUpc() + " inventory id: " + savedInventory.getId());
         });
     }
+
+//    @Override
+//    public void deallocateOrder(BeerOrderDto beerOrderDto) {
+//        log.debug("Deallocating OrderId: " + beerOrderDto.getId());
+//
+//        beerOrderDto.getBeerOrderLines().forEach(beerOrderLineDto -> {
+//            BeerInventory beerInventory = beerInventoryRepository.getOne(beerOrderLineDto.getId());
+//            int existingQtyOnHand = beerInventory.getQuantityOnHand();
+//            existingQtyOnHand += beerOrderLineDto.getQuantityAllocated();
+//            beerInventory.setQuantityOnHand(existingQtyOnHand + beerOrderLineDto.getQuantityAllocated());
+//            beerInventoryRepository.saveAndFlush(beerInventory);
+//
+//            // this is the code from the course.
+//            //
+//            //            BeerInventory beerInventory = BeerInventory.builder()
+//            //                    .beerId(beerOrderLineDto.getId())
+//            //                    .upc(beerOrderLineDto.getUpc())
+//            //                    // give back the inventory
+//            //                    // seems like this won't work?.  Seems like we need to increment that value...
+//            //                    .quantityOnHand(beerOrderLineDto.getQuantityAllocated())
+//            //                    .build();
+//            BeerInventory savedInventory = beerInventoryRepository.save(beerInventory);
+//
+//            log.debug("Saved Inventory for beer upc: " + savedInventory.getUpc() + " inventory id: " + savedInventory.getId());
+//        });
+//    }
 }

@@ -6,7 +6,8 @@
 ### defaults for this docker image - github.com/vromero/activemq-artemis
 spring.artemis.user=artemis
 spring.artemis.password=simetraehcapa
-
+  
+  
 [Docker ActiveMQ](#docker-activemq)
 
 
@@ -56,19 +57,24 @@ There are different methods to run a Docker image, from interactive Docker to Ku
 
 To run ActiveMQ with AMQP, JMS and the web console open (if your are running 2.3.0 or later), run the following command:
 
+MAC
+
 docker run -it --rm \
   -p 8161:8161 \
   -p 61616:61616 \
   vromero/activemq-artemis
+  
+  WINDOWS
+  docker run -it --rm -p 8161:8161 -p 61616:61616 vromero/activemq-artemis
 
 After a few seconds you'll see in the output a block similar to:
-
+  
 _        _               _
-/ \  ____| |_  ___ __  __(_) _____
-/ _ \|  _ \ __|/ _ \  \/  | |/  __/
-/ ___ \ | \/ |_/  __/ |\/| | |\___ \
-/_/   \_\|   \__\____|_|  |_|_|/___ /
-Apache ActiveMQ Artemis x.x.x
+/ \  ____| |_  ___ __  __(_) _____  
+/ _ \|  _ \ __|/ _ \  \/  | |/  __/  
+/ ___ \ | \/ |_/  __/ |\/| | |\___ \  
+/_/   \_\|   \__\____|_|  |_|_|/___ /  
+Apache ActiveMQ Artemis x.x.x  
 
 HH:mm:ss,SSS INFO  [...] AMQ101000: Starting ActiveMQ Artemis Server
 
