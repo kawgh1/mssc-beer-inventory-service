@@ -10,7 +10,7 @@
     <parent>
         <groupId>com.github.sfg-beer-works</groupId>
         <artifactId>sfg-brewery-bom</artifactId>
-        <version>1.0.17</version>
+        <version>1.0.11</version>
     </parent>
 
     <groupId>com.kwgdev</groupId>
@@ -20,7 +20,6 @@
     <name>mssc-beer-inventory-service</name>
 
     <description>MSSC Beer Inventory Service</description>
-
 
 
     <dependencies>
@@ -50,6 +49,7 @@
         </dependency>
 
     </dependencies>
+
 
 
 </project>
