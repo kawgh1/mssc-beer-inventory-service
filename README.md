@@ -33,6 +33,7 @@ Beer object example:
 | [Brewery Beer Service](https://github.com/kawgh1/mssc-beer-service) | 8080 |
 | [Brewery Beer Order Service](https://github.com/kawgh1/mssc-beer-order-service) | 8081 |
 | [Brewery Beer Inventory Service](https://github.com/kawgh1/mssc-beer-inventory-service) | 8082 |
+| [Inventory Failover Service](https://github.com/kawgh1/mssc-inventory-failover) | 8083 |
 
 [![CircleCI](https://circleci.com/gh/kawgh1/mssc-beer-inventory-service.svg?style=svg)](https://circleci.com/gh/kawgh1/mssc-beer-inventory-service)
 # MSSC Beer Inventory Service - Microservice
@@ -50,7 +51,34 @@ Beer object example:
 #### 10. Service Registration
 #### 11. Service Discovery
 #### 12. Circuit Breaker
+#### 13. Spring Cloud Config
+#### 14. Distributed Tracing
 
+- ### Circuit Breaker Pattern
+
+    - The Circuit Breaker Pattern is a simple concept which allows you to recover from errors
+    - If a mission critical service is unavailable or has unrecoverable errors, via the Circuit Breaker Pattern you can specify an alternative action
+    - For example, we wish to always have inventory for potential orders
+        - If the inventory service is down, we can provide a fallback service to respond with inventory
+
+- ### Spring Cloud Circuit Breaker
+    - Spring Cloud Circuit Breaker is a project which provides abstractions across several circuit breaker implementations
+        - Thus your source code is not tied t a specific implementation (like SLF4J)
+    - **Supported:**
+        - Netflix Hystrix
+        - Resilience4J
+        - Sentinel
+        - Spring Retry
+        
+- ### Spring Cloud Gateway Circuit Breakers
+    - Spring Cloud Gateway supports Netflix Hystrix and Resilience4J
+    - **Gateway Filters** are used on top of the Spring Cloud Circuit Breaker APIs
+    - Netflix has placed Hystrix into maintenance mode, Spring suggests to use Resilience4J
+    
+- ### In this project:
+    - Create Inventory Failover Service
+    - Configure Spring Cloud Gateway to use circuit breaker for failover
+    - Configure Feign to use Circuit Breaker
 
 [Docker ActiveMQ](#docker-activemq)
 
