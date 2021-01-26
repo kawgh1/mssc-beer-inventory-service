@@ -42,6 +42,7 @@ public class BeerDto implements Serializable  {
 
     static final long serialVersionUID = -5815566940065181210L;
 
+
     @Null
     private UUID id;
 

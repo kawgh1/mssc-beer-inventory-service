@@ -43,6 +43,8 @@ public class AllocationServiceImpl implements AllocationService {
         // and if we allocate everything we're happy
 
         beerOrderDto.getBeerOrderLines().forEach(beerOrderLine -> {
+            log.debug(" beerOrderLine quantity = " + String.valueOf(beerOrderLine.getOrderQuantity()));
+            log.debug(" beerOrderLine quantity allocated = " + String.valueOf(beerOrderLine.getQuantityAllocated()));
             if ((((beerOrderLine.getOrderQuantity() != null ? beerOrderLine.getOrderQuantity() : 0)
                     - (beerOrderLine.getQuantityAllocated() != null ? beerOrderLine.getQuantityAllocated() : 0)) > 0)) {
                 allocateBeerOrderLine(beerOrderLine);
