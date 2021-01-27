@@ -23,6 +23,18 @@
 
 
     <dependencies>
+        <!--        Spring Cloud Sleuth / Zipkin - Distributed Tracing localhost:9411-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <!--        sleuth / zipkin logging trace see resources/logback-spring.xml-->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.3</version>
+        </dependency>
+
 
     <!--        "Spring Cloud Config Client" - this is used to tell Cloud Config Server to check Eureka for path to Config Server and app properties-->
     <!--        Checks a bootstrap.properties file first, then finds config files from there, 2 step process -->
