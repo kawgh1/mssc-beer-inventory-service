@@ -1,0 +1,72 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------< com.kwgdev:mssc-beer-inventory-service >---------------
+[INFO] Building mssc-beer-inventory-service 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- docker-maven-plugin:0.33.0:build (default-cli) @ mssc-beer-inventory-service ---
+[WARNING] Invalid POM for com.github.jknack:handlebars:jar:4.0.7, transitive dependencies (if any) will not be available, enable debug logging for more details
+[WARNING] Invalid POM for com.github.jknack:handlebars-helpers:jar:4.0.7, transitive dependencies (if any) will not be available, enable debug logging for more details
+[INFO] Copying files to C:\Users\----\IdeaProjects\mssc-beer-inventory-service\target\docker\<docker-username>\mssc-beer-inventory-service\build\maven
+[INFO] Building tar: C:\Users\----\IdeaProjects\mssc-beer-inventory-service\target\docker\<docker-username>\mssc-beer-inventory-service\tmp\docker-build.tar
+[INFO] DOCKER> [<docker-username>/mssc-beer-inventory-service:latest] "mssc-beer-inventory-service": Created docker-build.tar in 6 seconds
+[INFO] DOCKER> Step 1/13 : FROM openjdk:11-jre-slim as builder
+[INFO] DOCKER>
+[INFO] DOCKER> ---> ff68ba8d72c9
+[INFO] DOCKER> Step 2/13 : WORKDIR application
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 3e6956397948
+[INFO] DOCKER> Step 3/13 : ADD maven/mssc-beer-inventory-service-0.0.1-SNAPSHOT.jar mssc-beer-inventory-service-0.0.1-SNAPSHOT.jar
+[INFO] DOCKER>
+[INFO] DOCKER> ---> bf1b78825ad0
+[INFO] DOCKER> Step 4/13 : RUN java -Djarmode=layertools -jar mssc-beer-inventory-service-0.0.1-SNAPSHOT.jar extract
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in b422b732f8f0
+[INFO] DOCKER> Removing intermediate container b422b732f8f0
+[INFO] DOCKER> ---> 8bb2034abe28
+[INFO] DOCKER> Step 5/13 : FROM openjdk:11-jre-slim
+[INFO] DOCKER>
+[INFO] DOCKER> ---> ff68ba8d72c9
+[INFO] DOCKER> Step 6/13 : LABEL PROJECT_NAME=mssc-beer-inventory-service       PROJECT=com.kwgdev:mssc-beer-inventory-service:jar:0.0.1-SNAPSHOT
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 85d028825e96
+[INFO] DOCKER> Removing intermediate container 85d028825e96
+[INFO] DOCKER> ---> 993a5d90f388
+[INFO] DOCKER> Step 7/13 : EXPOSE 8080
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 836e55c498e6
+[INFO] DOCKER> Removing intermediate container 836e55c498e6
+[INFO] DOCKER> ---> 92553b06a468
+[INFO] DOCKER> Step 8/13 : WORKDIR application
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 50e878f24abf
+[INFO] DOCKER> Removing intermediate container 50e878f24abf
+[INFO] DOCKER> ---> 25ccb222ea25
+[INFO] DOCKER> Step 9/13 : COPY --from=builder application/dependencies/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> 01213c31a4b0
+[INFO] DOCKER> Step 10/13 : COPY --from=builder application/spring-boot-loader/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> 2ea5f35e1fb0
+[INFO] DOCKER> Step 11/13 : COPY --from=builder application/snapshot-dependencies/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> d95390c291e3
+[INFO] DOCKER> Step 12/13 : COPY --from=builder application/application/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> 57d997a7d9b1
+[INFO] DOCKER> Step 13/13 : ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "org.springframework.boot.loader.JarLauncher"]
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 4a3511e50932
+[INFO] DOCKER> Removing intermediate container 4a3511e50932
+[INFO] DOCKER> ---> 107e8c981311
+[INFO] DOCKER> Successfully built 107e8c981311
+[INFO] DOCKER> Successfully tagged <docker-username>/mssc-beer-inventory-service:latest
+[INFO] DOCKER> [<docker-username>/mssc-beer-inventory-service:latest] "mssc-beer-inventory-service": Built image sha256:107e8
+[INFO] DOCKER> [<docker-username>/mssc-beer-inventory-service:latest] "mssc-beer-inventory-service": Tag with latest,0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.308 s
+[INFO] Finished at: 2021-01-28T22:08:24-06:00
+[INFO] ------------------------------------------------------------------------
